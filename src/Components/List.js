@@ -14,7 +14,7 @@ const List = () => {
   return (
     <>
       <h1 className='text-center p-5'>CRUD Table View</h1>
-      <div><button className='mb-5 btn btn-primary float-right'>Create</button></div>
+      <Link to={'/create'} className='mb-5 btn btn-primary float-right'>Create</Link>
       <table class="table">
         <thead>
             <tr>
