@@ -30,9 +30,7 @@ const Create = ({data=null}) => {
     }
 
     const handleSubmit = (e) => {
-      e.preventDefault()
-      console.log(formData);
-      
+      e.preventDefault()      
       axios.post('https://jsonplaceholder.typicode.com/users/',
         formData,
       )
@@ -54,29 +52,29 @@ const Create = ({data=null}) => {
       <form method="post" className='row' onSubmit={handleSubmit}>
         <div className='form-group mt-2'>
             <label htmlFor="name" className='form-label'>Name: </label>
-            <input type="text" name="name" id="name" className='form-control' value={formData?.name} placeholder='Enter Name' onChange={handleChange} />
+            <input type="text" name="name" id="name" className='form-control' value={formData?.name} placeholder='Enter Name' onChange={handleChange} required />
         </div>
         <div className='form-group col-sm-6 mt-2'>
             <label htmlFor="name" className='form-label'>Email: </label>
-            <input type="email" name="email" id="email" className='form-control' value={formData?.email} placeholder='Enter Email' onChange={handleChange} />
+            <input type="email" name="email" id="email" className='form-control' value={formData?.email} placeholder='Enter Email' onChange={handleChange} required />
         </div>
         <div className='form-group col-sm-6 mt-2'>
             <label htmlFor="name" className='form-label'>Phone: </label>
-            <input type="text" name="phone" id="phone" className='form-control' value={formData?.phone} placeholder='Enter Phone' onChange={handleChange} />
+            <input type="text" name="phone" id="phone" className='form-control' value={formData?.phone} placeholder='Enter Phone' onChange={handleChange} required />
         </div>
         <div className='form-group mt-2 row pe-0'>
             <label htmlFor="name" className='form-label'>Address: </label>
             <div className='col-sm-6 pe-2'>
-              <input type="text" name="street" id="street" className='form-control' value={formData?.address?.street} placeholder='Enter Street' onChange={handleAddressChange} />
+              <input type="text" name="street" id="street" className='form-control' value={formData?.address?.street} placeholder='Enter Street' onChange={handleAddressChange} required />
             </div>
             <div className='col-sm-6 pe-0 ps-3'>
-              <input type="text" name="suite" id="suite" className='form-control' value={formData?.address?.suite} placeholder='Enter Suite' onChange={handleAddressChange} />
+              <input type="text" name="suite" id="suite" className='form-control' value={formData?.address?.suite} placeholder='Enter Suite' onChange={handleAddressChange} required />
             </div>
             <div className='col-sm-6 mt-2 pe-2'>
-              <input type="text" name="city" id="city" className='form-control' value={formData?.address?.city} placeholder='Enter City' onChange={handleAddressChange} />
+              <input type="text" name="city" id="city" className='form-control' value={formData?.address?.city} placeholder='Enter City' onChange={handleAddressChange} required />
             </div>
             <div className='col-sm-6 mt-2 pe-0 ps-3'>
-              <input type="text" name="zipcode" id="zipcode" className='form-control' value={formData?.address?.zipcode} placeholder='Enter Zipcode' onChange={handleAddressChange} />
+              <input type="text" name="zipcode" id="zipcode" className='form-control' value={formData?.address?.zipcode} placeholder='Enter Zipcode' onChange={handleAddressChange} required />
             </div>
         </div>  
         <button type='submit' className='btn btn-success my-3 py-2 px-4'>{data? 'Update' : 'Create'}</button>

@@ -8,14 +8,12 @@ const List = () => {
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users/')
         .then(response => setData(response.data))
-        .then(res => console.log(res)) 
+        // .then(res => console.log(res)) 
     },[]);
-    console.log(data);
     const handleDelete = async () => {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${deleteId}`)
       .then((response) => {
         setData(data.filter(user => user.id !== deleteId));
-        console.log(response)
         document.getElementById('closeModalButton').click(); 
       });
       setDeleteId(null);
