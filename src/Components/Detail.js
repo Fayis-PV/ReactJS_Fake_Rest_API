@@ -9,7 +9,7 @@ const Detail = () => {
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then(response => response.json())
         .then(json => setData(json))
-    },[])
+    },[id])
     
   return (
     <>
