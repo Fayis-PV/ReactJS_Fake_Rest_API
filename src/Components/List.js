@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const List = () => {
     const [data, setData] = useState([])
@@ -14,6 +15,7 @@ const List = () => {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${deleteId}`)
       .then((response) => {
         setData(data.filter(user => user.id !== deleteId));
+        toast.success('User Deleted Successfully')
         document.getElementById('closeModalButton').click(); 
       });
       setDeleteId(null);

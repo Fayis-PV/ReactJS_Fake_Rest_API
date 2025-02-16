@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Create = ({data=null}) => {  
     const navigate = useNavigate()
@@ -36,13 +37,12 @@ const Create = ({data=null}) => {
       )
       .then((response)=>{
         if (response.status === 201){
-          console.log('User Successfully Created')
           console.log(response.data);
-          
-          data?  navigate(`/user/${data?.id}`) : navigate('/');
+          data? (toast.success('User Updated Successfully')):(toast.success('User Created Successfully'));
+          data? (navigate(`/user/${data?.id}`)) : (navigate('/'));
         }
       })
-      .catch((error) => console.log(error))
+      .catch((error) => toast.error(`Error: ${error}`))
     }
     
   return (
