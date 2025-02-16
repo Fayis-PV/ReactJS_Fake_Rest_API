@@ -14,12 +14,12 @@ const Detail = () => {
   return (
     <>
       <h1 className='p-4 text-center'>User Profile</h1>
-      <h3>Name: {data.name}</h3>
-      <p>Email: {data.email}</p>
-      <p>Phone: {data.phone}</p>
+      <h3>Name: {data?.name}</h3>
+      <p>Email: {data?.email}</p>
+      <p>Phone: {data?.phone}</p>
       <p>Address:</p>
       <div className='px-4'>
-        <i>{data.address?.street}</i><br /><i> {data.address?.suite}</i><br/><i> {data.address?.city} </i><br /><i> {data.address?.zipcode}</i>
+        <i>{data?.address?.street}</i><br /><i> {data?.address?.suite}</i><br/><i> {data?.address?.city} </i><br /><i> {data?.address?.zipcode}</i>
         </div>
         <Link to={'/'} className='my-2 btn btn-primary float-right'>Home</Link>
     
