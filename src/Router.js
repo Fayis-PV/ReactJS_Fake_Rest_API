@@ -1,6 +1,7 @@
 import React from 'react'
 import List from './Components/List'
 import Create from './Components/Create'
+import Detail from './Components/Detail'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const Router = () => {
@@ -10,6 +11,7 @@ const Router = () => {
         <Routes >
           <Route index element={<List />} />
           <Route path='create' element={<Create />} />
+          <Route path="/user/:id" element={<Detail />} />
         </Routes>
       </BrowserRouter>
 

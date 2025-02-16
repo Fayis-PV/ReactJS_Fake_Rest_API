@@ -31,11 +31,11 @@ const List = () => {
           {data.map((user) => {
             return(
             <tr>
-                <td>{user.name}</td>
+                <td><Link to={`user/${user.id}`}>{user.name}</Link></td>
                 <td>{user.phone}</td>
                 <td>{user.email}</td>
                 <td>{user.address.street}, {user.address.suite}, {user.address.city} - {user.address.zipcode}</td>
-                <td style={{width: '40px'}}><button className='btn btn-warning'>View</button></td>
+                <td style={{width: '40px'}}><Link to={`user/${user.id}`} className='btn btn-warning'>View</Link></td>
                 <td style={{width: '30px'}}><button className='btn btn-success'>Edit</button></td>
                 <td style={{width: '50px'}}><button className='btn btn-danger'>Delete</button></td>
             </tr>
